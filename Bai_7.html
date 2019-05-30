@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 1000px">
+    <fieldset>
+        <legend>Phương trình ax2 + bx +c =0</legend>
+        Nhập a= <input id="Num1" type="number" ><br>
+        <br>
+        Nhập b= <input id="Num2" type="number" ><br>
+        <br>
+        Nhập c= <input id="Num3" type="number" ><br>
+        <br>
+        <input type="button" value="Tính Nghiệm" onclick="TinhNghiem()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function TinhNghiem() {
+        var x1;
+        var x2;
+        var dela=0;
+        var Num1=parseInt(document.getElementById('Num1').value);
+        var Num2=parseInt(document.getElementById('Num2').value);
+        var Num3=parseInt(document.getElementById('Num3').value);
+        dela=Num2*Num2-4*Num1*Num3;
+        alert(Math.sqrt(dela));
+        if(dela<0)
+        {
+            ans='Phương trình vô nghiệm ';
+            x1=x2='';
+        }
+        else
+        {
+            if(dela==0)
+            {
+                ans='Phương trình có nghiệm kép';
+                x1=-Num2/(2*Num1);
+                x2='';
+            }
+            else
+            {
+
+                ans= 'Phương trình có 2 nghiệm ';
+                x1=-Num2-Math.sqrt(dela)/(2*Num1);
+                x2=-Num2+Math.sqrt(dela)/(2*Num1);
+            }
+
+        }
+        document.getElementById('Res').innerHTML=ans+x1+' '+x2;
+    }
+</script>
+</body>
+</html>

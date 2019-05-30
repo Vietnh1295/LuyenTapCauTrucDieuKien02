@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 1000px">
+    <fieldset>
+        <legend>Kiểm tra có phait tam giác ko?</legend>
+        Nhập a= <input id="Num1" type="number" ><br>
+        <br>
+        Nhập b= <input id="Num2" type="number" ><br>
+        <br>
+        Nhập c= <input id="Num3" type="number" ><br>
+        <br>
+        <input type="button" value="Kiểm Tra " onclick="Kiemtra()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function Kiemtra() {
+        var res;
+        var Num1=parseInt(document.getElementById('Num1').value);
+        var Num2=parseInt(document.getElementById('Num2').value);
+        var Num3=parseInt(document.getElementById('Num3').value);
+        if(Num1<0||Num2<0||Num3<0)
+        {
+            res='Đây không phải tam giác';
+        }
+        else
+        {
+            if((Num1 + Num2) > Num3&&(Num2 + Num3) > Num1&&(Num1 + Num3) > Num2)
+            {
+                res='Đây là tam giác';
+            }
+            else
+            {
+                res='Đây không phải tam giác';
+            }
+
+        }
+        document.getElementById('Res').innerHTML=res;
+    }
+</script>
+</body>
+</html>

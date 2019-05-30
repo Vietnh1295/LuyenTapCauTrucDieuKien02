@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 700px">
+    <fieldset>
+        <legend>Chuyển từ độ C sang độ F.</legend>
+        Nhập độ C = <input id="DoC" type="number" >
+        <input type="button" value="Chuyển đổi" onclick="ChuyenDoi()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function ChuyenDoi() {
+        var DoC=parseInt(document.getElementById('DoC').value);
+        var F=(9*DoC)/5 + 32;
+        document.getElementById('Res').innerHTML=F;
+    }
+</script>
+</body>
+</html>

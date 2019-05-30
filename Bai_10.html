@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 600px">
+    <fieldset>
+        <legend>Tính giá điện</legend>
+        Số điện= <input id="SoDien" type="number" >
+        Số tiền trên mỗi số(VND)= <input id="VND" type="number" ><br>
+        <br>
+        <input type="button" value="Tính Tiền" onclick="TinhTien()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function TinhTien() {
+
+        var ans='Giá tiền điện của bạn ';
+        var SoDien=parseInt(document.getElementById('SoDien').value);
+        var VND=parseInt(document.getElementById('VND').value);
+        var res;
+        if(SoDien<0)
+        {
+            document.getElementById('SoDien').value=0;
+            ans='mời bạn nhập lại số điện';
+            res='';
+        }
+        else{
+            if(VND>0)
+            {
+                res=SoDien*VND/100;
+            }
+            else
+            {
+                document.getElementById('VND').value=0;
+                ans='mời bạn nhập lại số tiền tran mỗi số điện';
+                res='';
+            }}
+
+        document.getElementById('Res').innerHTML=ans+res;
+    }
+</script>
+</body>
+</html>

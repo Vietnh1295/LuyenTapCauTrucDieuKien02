@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 700px">
+    <fieldset>
+        <legend>Chuyển từ mét sang feet:</legend>
+        Nhập độ M = <input id="Met" type="number" >
+        <input type="button" value="Chuyển đổi" onclick="ChuyenDoi()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function ChuyenDoi() {
+        var ans='Chuyển từ mét sang feet:';
+        var Met=parseInt(document.getElementById('Met').value);
+        var ft;
+
+        if(Met<0)
+        {
+            document.getElementById('Met').value=0;
+            ans='mời bạn nhập lại Mét';
+            ft='';
+        }
+        else{
+            ft=Met * 3.2808;
+        }
+        document.getElementById('Res').innerHTML=ans+ft;
+
+    }
+</script>
+</body>
+</html>

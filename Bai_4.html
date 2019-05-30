@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 1000px">
+    <fieldset>
+        <legend>Diện tích hình Chữ Nhật</legend>
+        Nhập canh a= <input id="CanhA" type="number" ><br>
+        <br>
+        Nhập canh b= <input id="CanhB" type="number" ><br>
+        <br>
+        <input type="button" value="Tính Diện tích" onclick="TínhDienTich()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function TínhDienTich() {
+        var ans='Diện tích của Chữ Nhật ';
+        var S;
+        var CanhA=parseInt(document.getElementById('CanhA').value);
+        var CanhB=parseInt(document.getElementById('CanhB').value);
+
+        if(CanhA<0)
+        {
+            document.getElementById('CanhA').value=0;
+            ans='mời bạn nhập lại số canh a';
+            S='';
+        }
+        else{
+            if(CanhB>0)
+            {
+                S=CanhA*CanhB;
+            }
+            else
+            {
+                document.getElementById('CanhA').value=0;
+                ans='mời bạn nhập lại số canh b';
+                S='';
+            }}
+        document.getElementById('Res').innerHTML=ans+S;
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 900px">
+    <fieldset>
+        <legend>Diện tích hình vuông</legend>
+       Nhập canh a= <input id="Canh" type="number" >
+        <input type="button" value="Tính Diện tích" onclick="TínhDienTich()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function TínhDienTich() {
+        var ans='Diện tích của Vuông ';
+        var Canh=parseInt(document.getElementById('Canh').value);
+        var S;
+        if(Canh<0)
+        {
+            document.getElementById('Canh').value=0;
+            ans='mời bạn nhập lại số canh a';
+            S='';
+        }
+        else{
+                S=Canh*Canh;
+          }
+        document.getElementById('Res').innerHTML=ans+S;
+
+    }
+</script>
+</body>
+</html>

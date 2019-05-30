@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 900px">
+    <fieldset>
+        <legend>Tính lãi ngân hàng</legend>
+        Số tiền ban  <input id="SoTien" type="number" ><br><br>
+        Số tháng        <input id="SoThang" style="margin-left: 45px" type="number" ><br>
+        <br>
+        Lãi xuất        <input id="Lai" style="margin-left: 50px" type="number" mix="0" max="100" ><br>
+        <br>
+        <input type="button" value="Tính Tiền" onclick="TinhTien()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function TinhTien() {
+
+        var ans='Số tiền lãi xuất bạn phải ';
+        var res;
+        var SoTien=parseInt(document.getElementById('SoTien').value);
+        var SoThang=parseInt(document.getElementById('SoThang').value);
+        var Lai=parseInt(document.getElementById('Lai').value);
+        if(SoTien<0)
+        {
+            document.getElementById('SoTien').value=0;
+            ans='mời bạn nhập lại số tiền';
+            res='';
+        }
+        else{
+           if(SoThang<0)
+           {
+               ans='mời bạn nhập lại số tháng';
+               res='';
+           }
+            else
+            {
+                if(Lai>=0&&Lai<=100)
+                {
+                    res=SoTien;
+                    for(var i=0;i<=SoThang;i++)
+                    {
+                        res+=SoTien*Lai/100;
+                    }
+
+                }
+                else
+                    {
+                document.getElementById('Lai').value=0;
+                ans='mời bạn nhập lại số lai';
+                res='';}
+            }}
+
+        document.getElementById('Res').innerHTML=ans+res;
+    }
+</script>
+</body>
+</html>

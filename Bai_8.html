@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 700px">
+    <fieldset>
+        <legend>Kiểm Tra Xem số tuổi</legend>
+        Nhập tuổi = <input id="Tuoi" type="number" >
+        <input type="button" value="Kiểm tra" onclick="Kiemtra()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function Kiemtra() {
+        var Tuoi=parseInt(document.getElementById('Tuoi').value);
+        var res;
+        if(Tuoi>0&&Tuoi<120)
+        {
+            res='Đây là tuổi con người';
+        }else
+            {
+                res='Đây không phải tuổi người';
+            }
+        document.getElementById('Res').innerHTML=res;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="margin-top: 200px; margin-left:  600px; margin-right: 600px">
+    <fieldset>
+        <legend>Tính thu thuế cá nhân</legend>
+        Số tiền kiếm được (VND)= <input id="SoTien" type="number" >
+        Thuế(%)= <input id="Thue" type="number" mix="0" max="100" ><br>
+        <br>
+        <input type="button" value="Tính Tiền" onclick="TinhTien()">
+        <p id="Res">Kết quả</p>
+    </fieldset>
+</form>
+<script>
+    function TinhTien() {
+
+        var ans='Thuế bạn phải đóng ';
+        var res;
+        var SoTien=parseInt(document.getElementById('SoTien').value);
+        var Thue=parseInt(document.getElementById('Thue').value);
+        if(SoTien<0)
+        {
+            document.getElementById('SoTien').value=0;
+            ans='mời bạn nhập lại số tiền';
+            res='';
+        }
+        else{
+            if(Thue>=0&&Thue<=100)
+        {
+            res=SoTien*Thue/100;
+        }
+        else
+        {
+            document.getElementById('Thue').value=0;
+            ans='mời bạn nhập lại số thuế';
+            res='';
+        }}
+
+        document.getElementById('Res').innerHTML=ans+res;
+    }
+</script>
+</body>
+</html>
